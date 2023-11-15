@@ -1,9 +1,6 @@
 package com.thatoneaiguy.beaconated;
 
-import com.thatoneaiguy.beaconated.init.BeaconatedBlockEntities;
-import com.thatoneaiguy.beaconated.init.BeaconatedBlocks;
-import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
-import com.thatoneaiguy.beaconated.init.BeaconatedItems;
+import com.thatoneaiguy.beaconated.init.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -31,6 +28,7 @@ public class Beaconated implements ModInitializer {
 		BeaconatedBlocks.registerModBlocks();
 		BeaconatedBlockEntities.registerBlockEntities();
 		BeaconatedEffects.registerStatusEffect();
+		BeaconatedEntities.register();
 
 		LOGGER.info("Building the machinery");
 	}

@@ -1,6 +1,9 @@
 package com.thatoneaiguy.beaconated.init;
 
+import com.thatoneaiguy.beaconated.entity.Chnompner;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.render.entity.EvokerFangsEntityRenderer;
+import net.minecraft.client.render.entity.model.EvokerFangsEntityModel;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.EvokerFangsEntity;
@@ -75,7 +78,7 @@ public abstract class BeaconatedGlobalMechanics {
         } while(blockPos.getY() >= MathHelper.floor(maxY) - 1);
 
         if (bl) {
-            world.spawnEntity(new EvokerFangsEntity(world, x, (double)blockPos.getY() + d, z, yaw, warmup, ));
+            world.spawnEntity(new Chnompner(world, x, (double)blockPos.getY() + d, z, yaw, warmup));
         }
     }
 }
