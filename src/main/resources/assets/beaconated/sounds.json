@@ -1,0 +1,20 @@
+{
+  "block.vibranium_block.place": {
+    "sounds": [
+      "beaconated:block/vibranium_place"
+    ],
+    "subtitle": "beaconated.subtitles.block.vibranium.place"
+  },
+  "block.vibranium_block.step": {
+    "sounds": [
+      "beaconated:block/vibranium_step"
+    ],
+    "subtitle": "beaconated.subtitles.block.vibranium.step"
+  },
+  "item.bread.hit": {
+    "sounds": [
+      "beaconated:item/bread_hit"
+    ],
+    "subtitle": "beaconated.subtitles.item.bread.hit"
+  }
+}

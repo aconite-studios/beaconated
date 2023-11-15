@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.thatoneaiguy.beaconated.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+
+	],
+	"client": [
+		"HudMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

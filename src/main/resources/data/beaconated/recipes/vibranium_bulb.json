@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bNb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "beaconated:vibranium_ingot"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "beaconated:vibranium_bulb",
+    "count": 4
+  }
+}

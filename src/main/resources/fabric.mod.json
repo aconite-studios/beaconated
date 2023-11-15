@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "beaconated",
+	"version": "${version}",
+	"name": "Beaconated",
+	"description": "Machinery mod that revolves around beacons!",
+	"authors": [
+		"thatoneaiguy"
+	],
+	"contributors": [
+		"ideologi"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "ARR",
+	"icon": "assets/beaconated/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.thatoneaiguy.beaconated.Beaconated"
+		],
+		"fabric-datagen": [
+          "com.thatoneaiguy.beaconated.datagen.BeaconatedDataGenerator"
+		],
+		"client": [
+			"com.thatoneaiguy.beaconated.BeaconatedClient"
+			]
+	},
+	"mixins": [
+		"beaconated.mixins.json"
+	],
+	"accessWidener" : "beaconated.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "zeughaus"
+	}
+}

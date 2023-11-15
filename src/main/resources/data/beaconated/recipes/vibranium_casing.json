@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:dark_oak_planks"
+  },
+  "addition": {
+    "item": "beaconated:vibranium_ingot"
+  },
+  "result": {
+    "item": "beaconated:vibranium_casing"
+  }
+}

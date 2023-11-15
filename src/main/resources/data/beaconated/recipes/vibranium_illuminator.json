@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#R#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "beaconated:vibranium_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "result": {
+    "item": "beaconated:vibranium_illuminator",
+    "count": 1
+  }
+}

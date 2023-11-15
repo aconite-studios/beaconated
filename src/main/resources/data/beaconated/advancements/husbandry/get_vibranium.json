@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "got_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beaconated:vibranium_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "TEST 1"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "beaconated:vibranium_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "TEST 2"
+    }
+  },
+  "requirements": [
+    [
+      "got_vibranium_ingot"
+    ]
+  ]
+}

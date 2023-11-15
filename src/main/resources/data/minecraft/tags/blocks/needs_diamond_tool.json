@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "beaconated:vibranium_block",
+    "beaconated:vibranium_illuminator",
+    "beaconated:vibranium_casing",
+    "beaconated:vibranium_bulb"
+  ]
+}
