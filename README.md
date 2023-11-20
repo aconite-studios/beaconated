@@ -16,6 +16,10 @@ The mod adds a new alloy: Vibranium. This new alloy can be used to make machines
 - Vibranium Illuminators are one of this mods machines, it can be used like a beacon that gives you effects
 - Any player in a beacon radius of a powered Illuminator will start glowing
 - Will also create end rod particles in the radius of the glowing
+### Vibranium Chnompner
+- Any player in a beacon radius will be bitten every three seconds
+### Vibranium Pendant
+- Comically simple, if you have this vibranium does noting to you
 
 # FAQ
 
