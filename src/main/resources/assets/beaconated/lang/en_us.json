@@ -1,13 +1,18 @@
 {
-  "item.beaconated.vibranium_ingot": "Vibranium Ingot",
-  "item.beaconated.vibranium_pendant": "Vibranium Pendant",
+  "advancements.nether.obtain_vibranium.description": "A placeholder",
+  "advancements.nether.obtain_vibranium.title": "A placeholder",
 
   "block.beaconated.vibranium_block": "§eVibranium Block",
   "block.beaconated.vibranium_casing": "§eVibranium Casing",
   "block.beaconated.vibranium_bulb": "§eVibranium Bulb",
   "block.beaconated.vibranium_illuminator": "§eVibranium Illuminator",
+  "block.beaconated.vibranium_chnompner": "§eVibranium Chnompner",
 
   "effect.beaconated.solidified_heart": "Solidified Heart",
 
+  "item.beaconated.vibranium_ingot": "Vibranium Ingot",
+  "item.beaconated.vibranium_pendant": "Vibranium Pendant",
+
   "itemGroup.beaconated.beaconated": "Beaconated"
+
 }

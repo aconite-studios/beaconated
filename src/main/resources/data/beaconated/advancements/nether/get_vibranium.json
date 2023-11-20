@@ -1,6 +1,7 @@
 {
+  "parent": "minecraft:nether/root",
   "criteria": {
-    "got_dirt": {
+    "vibranium": {
       "conditions": {
         "items": [
           {
@@ -15,9 +16,8 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "text": "TEST 1"
+      "translate": "advancements.nether.obtain_vibranium.description"
     },
     "frame": "task",
     "hidden": false,
@@ -26,12 +26,12 @@
     },
     "show_toast": true,
     "title": {
-      "text": "TEST 2"
+      "translate": "advancements.nether.obtain_vibranium.title"
     }
   },
   "requirements": [
     [
-      "got_vibranium_ingot"
+      "vibranium"
     ]
   ]
 }

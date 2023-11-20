@@ -12,6 +12,7 @@ public class BeaconatedItems {
 
     public static final Item VIBRANIUM_INGOT = registerItem("vibranium_ingot",
             new Item(new FabricItemSettings().group(BeaconatedItemGroup.BEACONATED).rarity(Rarity.UNCOMMON)));
+
     public static final Item VIBRANIUM_PENDANT = registerItem("vibranium_pendant",
             new VibraniumPendant(new FabricItemSettings().group(BeaconatedItemGroup.BEACONATED).rarity(Rarity.UNCOMMON).maxCount(1)));
 

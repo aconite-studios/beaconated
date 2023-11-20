@@ -19,8 +19,8 @@ public class BeaconatedBlockEntities {
         VIBRANIUM_ILLUMINATOR = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_illuminator"),
                 FabricBlockEntityTypeBuilder.create(VibraniumIlluminatorBlockEntity::new,
                         BeaconatedBlocks.VIBRANIUM_ILLUMINATOR).build(null));
-            CHOMPER = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "eater"),
+            CHOMPER = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_chnompner"),
                 FabricBlockEntityTypeBuilder.create(VibraniumChomperBlockEntity::new,
-                        BeaconatedBlocks.EATER).build(null));
+                        BeaconatedBlocks.VIBRANIUM_CHNOMPNER).build(null));
     }
 }

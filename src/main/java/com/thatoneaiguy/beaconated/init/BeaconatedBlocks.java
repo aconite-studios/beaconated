@@ -19,14 +19,17 @@ public class BeaconatedBlocks {
 
     public static final Block VIBRANIUM_BLOCK = registerBlock("vibranium_block",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
+
     public static final Block VIBRANIUM_CASING = registerBlock("vibranium_casing",
             new Block(FabricBlockSettings.of(Material.WOOD).requiresTool().strength(25.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
+
     public static final Block VIBRANIUM_BULB = registerBlock("vibranium_bulb",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(15)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_ILLUMINATOR = registerBlock("vibranium_illuminator",
             new VibraniumIlluminator(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
-    public static final Block EATER = registerBlock("eater",
+
+    public static final Block VIBRANIUM_CHNOMPNER = registerBlock("vibranium_chnompner",
             new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

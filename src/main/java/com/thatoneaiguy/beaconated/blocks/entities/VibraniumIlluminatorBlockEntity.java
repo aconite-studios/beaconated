@@ -24,9 +24,9 @@ public class VibraniumIlluminatorBlockEntity extends BlockEntity{
 
                 if (player.getBlockPos().isWithinDistance(blockPos, 64)) {
                     if (!player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
-                        StatusEffectInstance glowingEffect = new StatusEffectInstance(StatusEffects.GLOWING, 300, 0, true, false);
-                        player.addStatusEffect(glowingEffect);
-                        BeaconatedGlobalMechanics.ParticleSystem(world, blockPos);
+                            StatusEffectInstance glowingEffect = new StatusEffectInstance(StatusEffects.GLOWING, 300, 0, true, false);
+                            player.addStatusEffect(glowingEffect);
+                            BeaconatedGlobalMechanics.ParticleSystem(world, blockPos);
                     }
                 }
             });

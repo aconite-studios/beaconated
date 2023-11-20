@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " c ",
+    "ctc",
+    " c "
+  ],
+  "key": {
+    "c": {
+      "item": "beaconated:vibranium_casing"
+    },
+    "t": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result": {
+    "item": "beaconated:vibranium_chnompner",
+    "count": 1
+  }
+}

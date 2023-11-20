@@ -1,17 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "bbb",
-    "bbb",
-    "bbb"
+    " s ",
+    "s s",
+    " v "
   ],
   "key": {
-    "b": {
+    "s": {
+      "item": "minecraft:string"
+    },
+    "v": {
       "item": "beaconated:vibranium_ingot"
     }
   },
   "result": {
-    "item": "beaconated:vibranium_block",
+    "item": "beaconated:vibranium_pendant",
     "count": 1
   }
 }

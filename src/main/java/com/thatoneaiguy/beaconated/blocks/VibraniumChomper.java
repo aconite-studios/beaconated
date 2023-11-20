@@ -27,7 +27,7 @@ public class VibraniumChomper extends BlockWithEntity implements BlockEntityProv
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new VibraniumIlluminatorBlockEntity(pos, state);
+        return new VibraniumChomperBlockEntity(pos, state);
     }
 
     @Nullable
