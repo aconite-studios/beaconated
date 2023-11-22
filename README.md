@@ -1,4 +1,4 @@
-![Logo](https://cdn.modrinth.com/data/AMLz7JvD/images/e0199d49fafb4c96ced0f12b1ce8e018c5474a96.png)
+![Logo](https://cdn.discordapp.com/attachments/859447558745227274/1176822632449064980/e0199d49fafb4c96ced0f12b1ce8e018c5474a96.png?ex=6570447b&is=655dcf7b&hm=7592565836ebaa8d7f9d62cbefa7c21412d57319b9c61e56ca5dab2fe7450623&)
 
 ### A Fabric mod that adds machinery based off of Beacons.
 The mod adds a new alloy: Vibranium. This new alloy can be used to make machines that can defend you or give you effects.
