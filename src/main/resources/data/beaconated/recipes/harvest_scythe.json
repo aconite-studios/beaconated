@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "vvv",
+    "v /",
+    "  /"
+  ],
+  "key": {
+    "v": {
+      "item": "beaconated:vibranium_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "beaconated:harvest_scythe",
+    "count": 1
+  }
+}

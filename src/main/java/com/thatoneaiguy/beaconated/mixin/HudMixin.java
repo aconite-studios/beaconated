@@ -21,13 +21,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class HudMixin extends DrawableHelper {
 
     @Unique
-    private static final Identifier PENDANT_HEARTS = new Identifier("beaconated", "textures/gui/solidified_hearts.png");
+    private static final Identifier PENDANT = new Identifier("beaconated", "textures/gui/solidified_hearts.png");
 
     @Inject(method = "drawHeart", at = @At("HEAD"), cancellable = true)
-    private void pickyourpoison$drawCustomHeart(MatrixStack matrices, InGameHud.HeartType type, int x, int y, int v, boolean blinking, boolean halfHeart, CallbackInfo ci) {
+    private void beaconated$drawCustomHeart(MatrixStack matrices, InGameHud.HeartType type, int x, int y, int v, boolean blinking, boolean halfHeart, CallbackInfo ci) {
         if (!blinking && type == InGameHud.HeartType.NORMAL && MinecraftClient.getInstance().cameraEntity instanceof PlayerEntity player && (player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART))) {
             if (player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
-                RenderSystem.setShaderTexture(0, PENDANT_HEARTS);
+                RenderSystem.setShaderTexture(0, PENDANT);
             }
             drawTexture(matrices, x, y, halfHeart ? 9 : 0, v, 9, 9);
             RenderSystem.setShaderTexture(0, GUI_ICONS_TEXTURE);

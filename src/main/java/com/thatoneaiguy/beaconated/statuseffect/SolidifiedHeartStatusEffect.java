@@ -1,4 +1,4 @@
-package com.thatoneaiguy.beaconated.StatusEffect;
+package com.thatoneaiguy.beaconated.statuseffect;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;

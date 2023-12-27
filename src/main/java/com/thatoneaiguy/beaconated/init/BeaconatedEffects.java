@@ -1,7 +1,7 @@
 package com.thatoneaiguy.beaconated.init;
 
 import com.thatoneaiguy.beaconated.Beaconated;
-import com.thatoneaiguy.beaconated.StatusEffect.SolidifiedHeartStatusEffect;
+import com.thatoneaiguy.beaconated.statuseffect.SolidifiedHeartStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;

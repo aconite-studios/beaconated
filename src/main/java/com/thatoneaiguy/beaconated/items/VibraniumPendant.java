@@ -1,6 +1,7 @@
 package com.thatoneaiguy.beaconated.items;
 
 import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
+import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,4 +25,7 @@ public class VibraniumPendant extends Item {
         }
         super.inventoryTick(stack, world, entity, slot, selected);
     }
+
+
+
 }

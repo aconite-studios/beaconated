@@ -1,6 +1,6 @@
 {
-  "advancements.nether.obtain_vibranium.description": "A placeholder",
-  "advancements.nether.obtain_vibranium.title": "A placeholder",
+  "advancements.nether.obtain_vibranium.description": "Obtain Vibranium",
+  "advancements.nether.obtain_vibranium.title": "Pass the butter",
 
   "block.beaconated.vibranium_block": "§eVibranium Block",
   "block.beaconated.vibranium_casing": "§eVibranium Casing",
@@ -12,7 +12,8 @@
 
   "item.beaconated.vibranium_ingot": "Vibranium Ingot",
   "item.beaconated.vibranium_pendant": "Vibranium Pendant",
+  "item.beaconated.guilded_diary": "Guilded Diary",
+  "item.beaconated.harvest_scythe": "Harvest Scythe",
 
   "itemGroup.beaconated.beaconated": "Beaconated"
-
 }

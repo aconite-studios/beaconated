@@ -1,0 +1,18 @@
+{
+  "advancements.nether.obtain_vibranium.description": "Kumuha ng Vibranium",
+  "advancements.nether.obtain_vibranium.title": "Ipasa ang Mantikilya",
+
+  "block.beaconated.vibranium_block": "§eVibranium Bloke",
+  "block.beaconated.vibranium_casing": "§eVibranium Pambalot",
+  "block.beaconated.vibranium_bulb": "§eVibranium Bulb",
+  "block.beaconated.vibranium_illuminator": "§eVibranium Pang-ilaw",
+  "block.beaconated.vibranium_chnompner": "§eVibranium Kumakagat",
+
+  "effect.beaconated.solidified_heart": "Pusong Pinatibay",
+
+  "item.beaconated.vibranium_ingot": "Vibranium",
+  "item.beaconated.vibranium_pendant": "Vibranium Palawit",
+
+  "itemGroup.beaconated.beaconated": "Beaconated"
+
+}

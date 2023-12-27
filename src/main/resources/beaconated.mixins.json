@@ -3,10 +3,10 @@
 	"package": "com.thatoneaiguy.beaconated.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-
 	],
 	"client": [
-		"HudMixin"
+		"HudMixin",
+		"ItemRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

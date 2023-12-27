@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "beaconated:item/harvest_scythe_gui"
+  }
+}

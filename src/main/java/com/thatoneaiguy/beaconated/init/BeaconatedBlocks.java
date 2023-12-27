@@ -32,6 +32,9 @@ public class BeaconatedBlocks {
     public static final Block VIBRANIUM_CHNOMPNER = registerBlock("vibranium_chnompner",
             new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
 
+    public static final Block VIBRANIUM_PHILTRE = registerBlock("vibranium_philtre",
+            new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
+
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
         return Registry.register(Registry.BLOCK, new Identifier(Beaconated.MOD_ID, name), block);

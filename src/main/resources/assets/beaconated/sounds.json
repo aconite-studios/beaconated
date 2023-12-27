@@ -13,7 +13,7 @@
   },
   "item.bread.hit": {
     "sounds": [
-      "beaconated:item/bread_hit"
+      "beaconated:item/scythe_hit"
     ],
     "subtitle": "beaconated.subtitles.item.bread.hit"
   }

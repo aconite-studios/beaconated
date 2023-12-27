@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class VibraniumChomperBlockEntity extends BlockEntity {
-    static int ticks = 60;
+    static int ticks = 30;
     public VibraniumChomperBlockEntity(BlockPos pos, BlockState state) {
         super(BeaconatedBlockEntities.CHOMPER, pos, state);
     }
@@ -29,7 +29,7 @@ public class VibraniumChomperBlockEntity extends BlockEntity {
                     ticks = ticks - 1;
 
                     if(ticks < 0) {
-                        ticks = 60;
+                        ticks = 30;
                         Chnompner chnompner = new Chnompner(world, player.getX(), player.getY(), player.getZ(), player.getYaw());
                         chnompner.setPosition(player.getX(), player.getY(), player.getZ());
                         world.spawnEntity(chnompner);
