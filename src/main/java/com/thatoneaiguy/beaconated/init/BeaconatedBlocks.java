@@ -3,6 +3,7 @@ package com.thatoneaiguy.beaconated.init;
 import com.thatoneaiguy.beaconated.Beaconated;
 import com.thatoneaiguy.beaconated.blocks.VibraniumIlluminator;
 import com.thatoneaiguy.beaconated.blocks.VibraniumChomper;
+import com.thatoneaiguy.beaconated.blocks.VibraniumPhiltre;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -33,7 +34,7 @@ public class BeaconatedBlocks {
             new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_PHILTRE = registerBlock("vibranium_philtre",
-            new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
+            new VibraniumPhiltre(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);

@@ -12,8 +12,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.logging.Logger;
-
 public class VibraniumPhiltreBlockEntity extends BlockEntity {
     static int ticks = 400;
 
