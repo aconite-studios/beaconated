@@ -22,7 +22,7 @@ public class BeaconatedBlocks {
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_CASING = registerBlock("vibranium_casing",
-            new Block(FabricBlockSettings.of(Material.WOOD).requiresTool().strength(25.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
+            new Block(FabricBlockSettings.of(Material.WOOD).requiresTool().strength(25.0F, 1200.0F).sounds(BlockSoundGroup.WOOD)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_BULB = registerBlock("vibranium_bulb",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(15)), BeaconatedItemGroup.BEACONATED);
@@ -31,10 +31,10 @@ public class BeaconatedBlocks {
             new VibraniumIlluminator(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_CHNOMPNER = registerBlock("vibranium_chnompner",
-            new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
+            new VibraniumChomper(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
 
     public static final Block VIBRANIUM_PHILTRE = registerBlock("vibranium_philtre",
-            new VibraniumPhiltre(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE).luminance(10)), BeaconatedItemGroup.BEACONATED);
+            new VibraniumPhiltre(FabricBlockSettings.of(Material.METAL).requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)), BeaconatedItemGroup.BEACONATED);
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);

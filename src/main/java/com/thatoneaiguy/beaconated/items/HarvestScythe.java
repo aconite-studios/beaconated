@@ -15,12 +15,12 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.UUID;
 
-public class HarvestScythe extends SwordItem {
+public class HarvestScythe extends HoeItem {
 
     protected static final UUID ATTACK_REACH_MODIFIER_ID = UUID.fromString("76a8dee3-3e7e-4e11-ba46-a19b0c724567");
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
     public HarvestScythe(FabricItemSettings settings) {
-        super(ToolMaterials.NETHERITE, 6, -3.2F, settings);
+        super(ToolMaterials.NETHERITE, 7, -3.2F, settings);
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", 6, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", -3.2, EntityAttributeModifier.Operation.ADDITION));
