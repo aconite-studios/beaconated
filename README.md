@@ -3,8 +3,6 @@
 ### A Fabric mod that adds machinery based off of Beacons.
 The mod adds a new alloy: Vibranium. This new alloy can be used to make machines that can defend you or give you effects.
 
-# Gallery
-![Block and item showcase](https://cdn.modrinth.com/data/AMLz7JvD/images/119355e2d27c9085e6798c113485aba5ea40eb6d.png)
 # Current Features
 ### Vibranium
 - Vibranium can be obtained with four Netherite Ingots and four Golden Ingots
