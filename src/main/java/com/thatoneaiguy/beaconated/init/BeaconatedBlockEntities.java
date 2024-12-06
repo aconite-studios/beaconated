@@ -6,8 +6,9 @@ import com.thatoneaiguy.beaconated.blocks.entities.VibraniumChomperBlockEntity;
 import com.thatoneaiguy.beaconated.blocks.entities.VibraniumPhiltreBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class BeaconatedBlockEntities {
 
@@ -18,13 +19,13 @@ public class BeaconatedBlockEntities {
     public static BlockEntityType<VibraniumPhiltreBlockEntity> PHILTRE;
 
     public static void registerBlockEntities() {
-        VIBRANIUM_ILLUMINATOR = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_illuminator"),
+        VIBRANIUM_ILLUMINATOR = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_illuminator"),
                 FabricBlockEntityTypeBuilder.create(VibraniumIlluminatorBlockEntity::new,
                         BeaconatedBlocks.VIBRANIUM_ILLUMINATOR).build(null));
-        CHOMPER = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_chnompner"),
+        CHOMPER = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_chnompner"),
                 FabricBlockEntityTypeBuilder.create(VibraniumChomperBlockEntity::new,
                         BeaconatedBlocks.VIBRANIUM_CHNOMPNER).build(null));
-        PHILTRE = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_philtre"),
+        PHILTRE = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Beaconated.MOD_ID, "vibranium_philtre"),
                 FabricBlockEntityTypeBuilder.create(VibraniumPhiltreBlockEntity::new,
                         BeaconatedBlocks.VIBRANIUM_PHILTRE).build(null));
     }

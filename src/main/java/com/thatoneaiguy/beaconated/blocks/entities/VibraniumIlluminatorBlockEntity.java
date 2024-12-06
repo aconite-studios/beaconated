@@ -19,14 +19,13 @@ public class VibraniumIlluminatorBlockEntity extends BlockEntity{
     public static void tick(World world, BlockPos blockPos, BlockState blockState, VibraniumIlluminatorBlockEntity entity) {
         int i = 1;
         if (world.getBlockState(blockPos.down(i)).isOf(BeaconatedBlocks.VIBRANIUM_BULB)) {
-
+            BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,2,1);
             world.getPlayers().forEach(player -> {
-
                 if (player.getBlockPos().isWithinDistance(blockPos, 64)) {
                     if (!player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
                             StatusEffectInstance glowingEffect = new StatusEffectInstance(StatusEffects.GLOWING, 100, 0, true, false);
                             player.addStatusEffect(glowingEffect);
-                            BeaconatedGlobalMechanics.ParticleSystem(world, blockPos);
+                        BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,16,6);
                     }
                 }
             });

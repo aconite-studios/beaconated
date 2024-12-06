@@ -21,10 +21,11 @@ public class VibraniumChomperBlockEntity extends BlockEntity {
 
     int b = 1;
     if (world.getBlockState(blockPos.down(b)).isOf(BeaconatedBlocks.VIBRANIUM_BULB)) {
+        BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,2,1);
         world.getPlayers().forEach(player -> {
             if (player.getBlockPos().isWithinDistance(blockPos, 64)) {
                 if (!player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
-                    BeaconatedGlobalMechanics.ParticleSystem(world, blockPos);
+                    BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,16,6);
 
                     ticks = ticks - 1;
 

@@ -9,14 +9,14 @@ public abstract class BeaconatedGlobalMechanics {
 
     private static final Random random = new Random();
 
-    public static void ParticleSystem(World world, BlockPos pos) {
+    public static void ParticleSystem(World world, BlockPos pos, int size, int count) {
 
         if (world != null && world.isClient) {
-            for (int b = 0; b < 6; b++) {
-                double xOffset = random.nextGaussian() * 16;
-                double yOffset = random.nextGaussian() * 16;
-                double zOffset = random.nextGaussian() * 16;
-                world.addParticle(ParticleTypes.END_ROD, pos.getX() + 0.5 + xOffset, pos.getY() + 1.0 + yOffset, pos.getZ() + 0.5 + zOffset, 0.0, 0.0, 0.0);
+            for (int b = 0; b < count; b++) {
+                double xOffset = random.nextGaussian() * size;
+                double yOffset = random.nextGaussian() * size;
+                double zOffset = random.nextGaussian() * size;
+                world.addParticle(ParticleTypes.END_ROD, pos.getX() + xOffset, pos.getY() + 1.0 + yOffset, pos.getZ() + zOffset, 0.0, 0.0, 0.0);
             }
         }
     }
