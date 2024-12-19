@@ -1,5 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "credit": "Made with Blockbench",
+  "parent": "beaconated:block/vibranium_machinery",
   "textures": {
     "all": "beaconated:block/vibranium_illuminator"
   }

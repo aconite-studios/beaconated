@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "base": {
     "item": "minecraft:book"
   },
@@ -8,5 +8,8 @@
   },
   "result": {
     "item": "beaconated:guilded_diary"
+  },
+  "template": {
+    "tag": "minecraft:trim_templates"
   }
 }

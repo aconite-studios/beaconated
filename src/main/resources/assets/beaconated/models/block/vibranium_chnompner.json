@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "beaconated:block/vibranium_chnompner"
-  }
+	"credit": "Made with Blockbench",
+	"parent": "beaconated:block/vibranium_machinery",
+	"textures": {
+		"all": "beaconated:block/vibranium_chnompner"
+	}
 }

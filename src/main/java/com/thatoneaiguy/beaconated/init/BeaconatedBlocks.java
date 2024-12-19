@@ -1,6 +1,7 @@
 package com.thatoneaiguy.beaconated.init;
 
 import com.thatoneaiguy.beaconated.Beaconated;
+import com.thatoneaiguy.beaconated.blocks.VibraniumBlock;
 import com.thatoneaiguy.beaconated.blocks.VibraniumIlluminator;
 import com.thatoneaiguy.beaconated.blocks.VibraniumChomper;
 import com.thatoneaiguy.beaconated.blocks.VibraniumPhiltre;
@@ -8,18 +9,17 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 
 public class BeaconatedBlocks {
 
     public static final Block VIBRANIUM_BLOCK = registerBlock("vibranium_block",
-            new Block(FabricBlockSettings.create().requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
+            new VibraniumBlock(FabricBlockSettings.create().requiresTool().strength(50.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
 
     public static final Block VIBRANIUM_CASING = registerBlock("vibranium_casing",
             new Block(FabricBlockSettings.create().requiresTool().strength(25.0F, 1200.0F).sounds(BlockSoundGroup.WOOD)));
@@ -41,9 +41,9 @@ public class BeaconatedBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(Beaconated.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(Beaconated.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, new Identifier(Beaconated.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     }
 
     public static void registerModBlocks() {

@@ -16,6 +16,7 @@ import net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
@@ -33,7 +34,7 @@ public interface CustomAttackItem{
         if (target.isAttackable()) {
             if (!target.handleAttack(player)) {
 
-                float genericAttackDamage = (float)player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+                float genericAttackDamage = getDamage(player, attackerMainStack);
 
                 float itemAttackDamage;
                 if (target instanceof LivingEntity living) {
@@ -52,7 +53,7 @@ public interface CustomAttackItem{
                     int knockBack = 0;
                     knockBack += EnchantmentHelper.getKnockback(player);
                     if (player.isSprinting() && isItemCharged) {
-                        player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, player.getSoundCategory(), 1.0F, 1.0F);
+                        playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK);
                         ++knockBack;
                         canKnockBack = true;
                     }
@@ -74,10 +75,12 @@ public interface CustomAttackItem{
 
                     genericAttackDamage += itemAttackDamage;
 
-                    boolean canSweep = shouldSweep(attackerMainStack);
+                    boolean canSweep = false;
 
-                    if (isItemCharged && !canKnockBack && !canCritical && player.isOnGround() && player.horizontalSpeed-player.prevHorizontalSpeed < (double)player.getMovementSpeed()) {
-                        if (attackerMainStack.getItem() instanceof SwordItem) {
+                    boolean originalSweep = originalSweep(canCritical,canKnockBack,isItemCharged,player);
+
+                    if (originalSweep) {
+                        if (attackerMainStack.getItem() instanceof SwordItem || shouldSweep(attackerMainStack)) {
                             canSweep = true;
                         }
                     }
@@ -99,6 +102,7 @@ public interface CustomAttackItem{
                         if (knockBack > 0) {
                             if (target instanceof LivingEntity living) {
                                 living.takeKnockback((float)knockBack/2, MathHelper.sin(player.getYaw() * 0.017453292F), -MathHelper.cos(player.getYaw() * 0.017453292F));
+                                postKnockBack(attackerMainStack,living,player);
                             } else {
                                 target.addVelocity(-MathHelper.sin(player.getYaw() * 0.017453292F) * (float)knockBack/2, 0.1, MathHelper.cos(player.getYaw() * 0.017453292F) * (float)knockBack/2);
                             }
@@ -118,15 +122,15 @@ public interface CustomAttackItem{
                         }
 
                         if (canCritical) {
-                            player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, player.getSoundCategory(), 1.0F, 1.0F);
+                            playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_CRIT);
                             player.addCritParticles(target);
                         }
 
                         if (!canCritical && !canSweep) {
                             if (isItemCharged) {
-                                player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_STRONG, player.getSoundCategory(), 1.0F, 1.0F);
+                                playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_STRONG);
                             } else {
-                                player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_WEAK, player.getSoundCategory(), 1.0F, 1.0F);
+                                playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_WEAK);
                             }
                         }
 
@@ -167,7 +171,7 @@ public interface CustomAttackItem{
 
                         player.addExhaustion(0.1F);
                     } else {
-                        player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_NODAMAGE, player.getSoundCategory(), 1.0F, 1.0F);
+                        playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_NODAMAGE);
                         if (shouldTargetBurn) {
                             target.extinguish();
                         }
@@ -178,7 +182,15 @@ public interface CustomAttackItem{
         }
     }
 
-    static void sweep(PlayerEntity player, Entity target, float attackDamage) {
+    default boolean postKnockBack(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        return true;
+    }
+
+    default void playSound(PlayerEntity player, SoundEvent sound) {
+            player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), sound, player.getSoundCategory(), 1.0F, 1.0F);
+    }
+
+    default void sweep(PlayerEntity player, Entity target, float attackDamage) {
         float attackSweepDamage = getAttackSweepDamage(player, attackDamage);
         Iterator<LivingEntity> sweptEntities = getSweptEntities(player, target);
 
@@ -190,7 +202,7 @@ public interface CustomAttackItem{
                     do {
                         do {
                             if (!sweptEntities.hasNext()) {
-                                player.getWorld().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, player.getSoundCategory(), 1.0F, 1.0F);
+                                playSound(player, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP);
                                 spawnSweepAttackParticles(player);
                                 break sweep;
                             }
@@ -202,37 +214,45 @@ public interface CustomAttackItem{
             } while(livingEntity instanceof ArmorStandEntity && ((ArmorStandEntity)livingEntity).isMarker());
 
             if (player.squaredDistanceTo(livingEntity) < 9.0) {
-                livingEntity.takeKnockback(0.4000000059604645, MathHelper.sin(player.getYaw() * 0.017453292F), -MathHelper.cos(player.getYaw() * 0.017453292F));
+                applyKnockBack(livingEntity,player,target);
                 livingEntity.damage( getDamageSources(player), attackSweepDamage);
             }
         }
     }
 
-    static void spawnSweepAttackParticles(PlayerEntity player) {
+    default float getDamage(PlayerEntity player,ItemStack stack) {
+        return (float)player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+    }
+
+    default void applyKnockBack(LivingEntity livingEntity, PlayerEntity player, Entity target) {
+        livingEntity.takeKnockback(0.4000000059604645, MathHelper.sin(player.getYaw() * 0.017453292F), -MathHelper.cos(player.getYaw() * 0.017453292F));
+    }
+
+    default void spawnSweepAttackParticles(PlayerEntity player) {
         player.spawnSweepAttackParticles();
     }
 
-    static DamageSource getDamageSources(PlayerEntity player) {
+    default DamageSource getDamageSources(PlayerEntity player) {
         return player.getDamageSources().playerAttack(player);
     }
 
-    static boolean shouldSweep(ItemStack stack) {
+    default boolean shouldSweep(ItemStack stack) {
         return false;
     }
 
-    static float getAttackSweepDamage(PlayerEntity player, float attackDamage) {
+    default boolean originalSweep(boolean canCritical,boolean canKnockBack, boolean isItemCharged, PlayerEntity player) {
+        return isItemCharged && !canKnockBack && !canCritical && player.isOnGround() && player.horizontalSpeed-player.prevHorizontalSpeed < (double)player.getMovementSpeed();
+    }
+
+    default float getAttackSweepDamage(PlayerEntity player, float attackDamage) {
         return 1f * EnchantmentHelper.getSweepingMultiplier(player) * attackDamage;
     }
 
-    static Iterator<LivingEntity> getSweptEntities(PlayerEntity player, Entity target) {
+    default Iterator<LivingEntity> getSweptEntities(PlayerEntity player, Entity target) {
         return player.getWorld().getNonSpectatingEntities(LivingEntity.class, target.getBoundingBox().expand(1.0, 0.25, 1.0)).iterator();
     }
 
-    static boolean isSilent() {
-        return false;
-    }
-
-    static boolean damageTarget(Entity target, DamageSource source, float amount) {
+    default boolean damageTarget(Entity target, DamageSource source, float amount) {
         return target.damage(source, amount);
     }
 }
