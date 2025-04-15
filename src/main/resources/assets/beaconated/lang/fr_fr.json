@@ -1,18 +1,18 @@
 {
   "advancements.nether.obtain_vibranium.description": "Obtenir du Vibranium",
   "advancements.nether.obtain_vibranium.title": "Beurre en lingot",
-
-  "block.beaconated.vibranium_block": "§ebloc de Vibranium",
-  "block.beaconated.vibranium_casing": "§eRevêtement de Vibranium ",
-  "block.beaconated.vibranium_bulb": "§eAmpoule de Vibranium",
-  "block.beaconated.vibranium_illuminator": "§eIlluminateur de Vibranium",
-  "block.beaconated.vibranium_chnompner": "§eGrignoteur de Vibranium",
-
+  "beaconated.subtitles.item.sharp_sweep": "Sharp Sweep",
+  "block.beaconated.vibranium_block": "bloc de Vibranium",
+  "block.beaconated.vibranium_bulb": "Ampoule de Vibranium",
+  "block.beaconated.vibranium_casing": "Revêtement de Vibranium ",
+  "block.beaconated.vibranium_chnompner": "Grignoteur de Vibranium",
+  "block.beaconated.vibranium_illuminator": "Illuminateur de Vibranium",
+  "block.beaconated.vibranium_philtre": "Vibranium Philtre",
   "effect.beaconated.solidified_heart": "Cœur Solidifié",
-
+  "effect.beaconated.solidified_heart.pendant": "Until Unequipped",
+  "item.beaconated.guilded_diary": "Guilded Diary",
+  "item.beaconated.harvest_scythe": "Harvest Scythe",
   "item.beaconated.vibranium_ingot": "Lingot de Vibranium",
   "item.beaconated.vibranium_pendant": "Pendantif en Vibranium",
-
   "itemGroup.beaconated.beaconated": "Beaconated"
-
 }

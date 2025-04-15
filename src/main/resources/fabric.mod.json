@@ -3,12 +3,12 @@
 	"id": "beaconated",
 	"version": "${version}",
 	"name": "Beaconated",
-	"description": "Machinery mod that revolves around beacons!",
+	"description": "Machinery mod that revolves around vibranium! Beaconated inc. (C) is not responsible for poisoning, biting, and harvesting.",
 	"authors": [
-		"thatoneaiguy"
+		"thatoneaiguy (everest)"
 	],
 	"contributors": [
-		"ideologi"
+		"ARMURIII"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -34,11 +34,11 @@
 	"accessWidener" : "beaconated.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.19.2",
+		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "zeughaus"
+		"another-mod": "MY MODS"
 	}
 }

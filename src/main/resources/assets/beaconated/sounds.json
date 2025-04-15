@@ -11,10 +11,10 @@
     ],
     "subtitle": "beaconated.subtitles.block.vibranium.step"
   },
-  "item.bread.hit": {
+  "item.sharp_sweep": {
     "sounds": [
-      "beaconated:item/scythe_hit"
+      "beaconated:item/sharp_sweep"
     ],
-    "subtitle": "beaconated.subtitles.item.bread.hit"
+    "subtitle": "beaconated.subtitles.item.sharp_sweep"
   }
 }

@@ -13,6 +13,11 @@
   "item.beaconated.vibranium_ingot": "Vibranium",
   "item.beaconated.vibranium_pendant": "Vibranium Palawit",
 
-  "itemGroup.beaconated.beaconated": "Beaconated"
+  "itemGroup.beaconated.beaconated": "Beaconated",
+  "beaconated.subtitles.item.sharp_sweep": "Sharp Sweep",
+  "block.beaconated.vibranium_philtre": "Vibranium Philtre",
+  "effect.beaconated.solidified_heart.pendant": "Until Unequipped",
+  "item.beaconated.guilded_diary": "Guilded Diary",
+  "item.beaconated.harvest_scythe": "Harvest Scythe"
 
 }

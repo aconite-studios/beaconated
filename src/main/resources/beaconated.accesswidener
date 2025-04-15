@@ -1,3 +1,7 @@
 accessWidener	v1	named
 
 accessible class net/minecraft/client/gui/hud/InGameHud$HeartType
+accessible field net/minecraft/client/gui/screen/ingame/HandledScreen y I
+accessible method net/minecraft/entity/LivingEntity getEquipmentChanges ()Ljava/util/Map;
+accessible method net/minecraft/entity/LivingEntity setSyncedHandStack (Lnet/minecraft/entity/EquipmentSlot;Lnet/minecraft/item/ItemStack;)V
+accessible method net/minecraft/entity/effect/StatusEffectInstance fromNbt (Lnet/minecraft/entity/effect/StatusEffect;Lnet/minecraft/nbt/NbtCompound;)Lnet/minecraft/entity/effect/StatusEffectInstance;

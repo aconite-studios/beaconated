@@ -1,0 +1,6 @@
+{
+"entities": ["player", "zombie", "armor_stand"],
+  "slots": [
+    "chest/necklace"
+  ]
+}
