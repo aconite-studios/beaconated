@@ -12,6 +12,7 @@ import net.minecraft.client.util.ModelIdentifier;
 import net.minecraft.util.Identifier;
 import team.lodestar.lodestone.systems.particle.world.type.LodestoneWorldParticleType;
 
+import static com.thatoneaiguy.beaconated.Beaconated.DOT;
 import static com.thatoneaiguy.beaconated.Beaconated.SPARK;
 
 public class BeaconatedClient implements ClientModInitializer {
@@ -23,6 +24,7 @@ public class BeaconatedClient implements ClientModInitializer {
 
         // lodestone particles
         ParticleFactoryRegistry.getInstance().register(SPARK, LodestoneWorldParticleType.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(DOT, LodestoneWorldParticleType.Factory::new);
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
                 BeaconatedBlocks.VIBRANIUM_BULB,

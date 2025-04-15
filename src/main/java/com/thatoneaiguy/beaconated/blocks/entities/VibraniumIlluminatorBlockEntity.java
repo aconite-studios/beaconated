@@ -28,7 +28,7 @@ public class VibraniumIlluminatorBlockEntity extends BlockEntity{
                             player.addStatusEffect(glowingEffect);
                         BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,16,6);
                         if (world instanceof ClientWorld server) {
-                            AzuraParticleRenderer.renderLine(server, blockPos.toCenterPos(),player.getEyePos(), Beaconated.SPARK, 0.1);
+                            BeaconatedGlobalMechanics.renderLine(server, blockPos.toCenterPos(),player.getEyePos().add(0,-0.5,0), Beaconated.SPARK);
                         }
                     }
                 }

@@ -9,8 +9,6 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -41,7 +39,7 @@ public class VibraniumPhiltreBlockEntity extends BlockEntity {
                     if (!player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
                         BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,16,6);
                         if (world instanceof ClientWorld server) {
-                            AzuraParticleRenderer.renderLine(server, blockPos.toCenterPos(),player.getEyePos(), Beaconated.SPARK, 0.1);
+                            BeaconatedGlobalMechanics.renderLine(server, blockPos.toCenterPos(),player.getEyePos().add(0,-0.5,0), Beaconated.SPARK);
                         }
 
                         ticks--;

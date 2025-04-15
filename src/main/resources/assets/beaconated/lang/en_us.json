@@ -13,12 +13,12 @@
 
   "effect.beaconated.solidified_heart": "Solidified Heart",
   "effect.beaconated.solidified_heart.pendant": "Until Unequipped",
+  "effect.duration.assassination": "%s's Death",
 
   "item.beaconated.vibranium_ingot": "Vibranium Ingot",
   "item.beaconated.vibranium_pendant": "Vibranium Pendant",
   "item.beaconated.guilded_diary": "Guilded Diary",
   "item.beaconated.harvest_scythe": "Harvest Scythe",
 
-  "itemGroup.beaconated.beaconated": "Beaconated",
-  "item.beaconated.harvest_scythe.desc": "Powered"
+  "itemGroup.beaconated.beaconated": "Beaconated"
 }

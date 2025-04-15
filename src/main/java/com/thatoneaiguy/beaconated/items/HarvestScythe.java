@@ -6,9 +6,6 @@ import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import com.thatoneaiguy.beaconated.Beaconated;
 import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.network.AbstractClientPlayerEntity;
-import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -17,21 +14,17 @@ import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.UUID;
 
-public class HarvestScythe extends HoeItem implements CustomAttackItem,CustomArmPoseItem {
+public class HarvestScythe extends HoeItem implements CustomAttackItem {
 
     protected static final UUID ATTACK_REACH_MODIFIER_ID = UUID.fromString("76a8dee3-3e7e-4e11-ba46-a19b0c724567");
     private Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
@@ -106,8 +99,6 @@ public class HarvestScythe extends HoeItem implements CustomAttackItem,CustomArm
             builder.put(ReachEntityAttributes.REACH, new EntityAttributeModifier(ATTACK_REACH_MODIFIER_ID, "Weapon modifier", 0.5, EntityAttributeModifier.Operation.ADDITION));
             this.attributeModifiers = builder.build();
 
-            if (entity instanceof LivingEntity living && selected) setNBT(stack, living);
-
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
@@ -147,28 +138,5 @@ public class HarvestScythe extends HoeItem implements CustomAttackItem,CustomArm
     public Iterator<LivingEntity> getSweptEntities(PlayerEntity player, Entity target) {
         // bigger sweep
         return player.getWorld().getNonSpectatingEntities(LivingEntity.class, target.getBoundingBox().expand(2, 0.5, 2)).iterator();
-    }
-
-    @Override
-    public @Nullable BipedEntityModel.ArmPose getArmPose(ItemStack stack, AbstractClientPlayerEntity player, Hand hand) {
-        if (player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
-            return null;
-        }
-        return null;
-    }
-
-    private void setNBT(ItemStack stack, LivingEntity player) {
-        NbtCompound nbt = stack.getNbt();
-        if (nbt != null && nbt.getBoolean("beaconated:hssh") != player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
-            nbt.putBoolean("beaconated:hsh", player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART));
-        }
-    }
-
-    private boolean getNBT(ItemStack stack) {
-        NbtCompound nbt = stack.getNbt();
-        if (nbt != null) {
-            return nbt.getBoolean("beaconated:hsh");
-        }
-        return false;
     }
 }

@@ -1,10 +1,8 @@
 package com.thatoneaiguy.beaconated;
 
+import com.thatoneaiguy.beaconated.datagen.BeaconatedRecipeGenerator;
 import com.thatoneaiguy.beaconated.entity.Chnompner;
-import com.thatoneaiguy.beaconated.init.BeaconatedBlockEntities;
-import com.thatoneaiguy.beaconated.init.BeaconatedBlocks;
-import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
-import com.thatoneaiguy.beaconated.init.BeaconatedItems;
+import com.thatoneaiguy.beaconated.init.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -29,6 +27,7 @@ public class Beaconated implements ModInitializer {
 
 	// lodestone particles
 	public static LodestoneWorldParticleType SPARK = new LodestoneWorldParticleType();
+	public static LodestoneWorldParticleType DOT = new LodestoneWorldParticleType();
 
 	public static final EntityType<Chnompner> CHNOMPNER_ENTITY_TYPE = Registry.register(Registries.ENTITY_TYPE,
 			new Identifier(MOD_ID, "chnompner"),
@@ -43,8 +42,11 @@ public class Beaconated implements ModInitializer {
 
 		// lodestone particles
 		SPARK = Registry.register(Registries.PARTICLE_TYPE, id("pixel"), SPARK);
+		DOT = Registry.register(Registries.PARTICLE_TYPE, id("dot"), DOT);
 
 		BeaconatedItems.registerModItems();
+
+		BeaconatedItemGroup.registerModItemGroup();
 
 		BeaconatedBlocks.registerModBlocks();
 

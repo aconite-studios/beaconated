@@ -2,12 +2,13 @@ package com.thatoneaiguy.beaconated.blocks.entities;
 
 import com.thatoneaiguy.beaconated.Beaconated;
 import com.thatoneaiguy.beaconated.entity.Chnompner;
-import com.thatoneaiguy.beaconated.init.*;
+import com.thatoneaiguy.beaconated.init.BeaconatedBlockEntities;
+import com.thatoneaiguy.beaconated.init.BeaconatedBlocks;
+import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
+import com.thatoneaiguy.beaconated.init.BeaconatedGlobalMechanics;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -28,7 +29,7 @@ public class VibraniumChomperBlockEntity extends BlockEntity {
                 if (!player.hasStatusEffect(BeaconatedEffects.SOLIDIFIED_HEART)) {
                     BeaconatedGlobalMechanics.ParticleSystem(world, blockPos,16,6);
                     if (world instanceof ClientWorld server) {
-                        AzuraParticleRenderer.renderLine(server, blockPos.toCenterPos(),player.getEyePos(), Beaconated.SPARK, 0.1);
+                        BeaconatedGlobalMechanics.renderLine(server, blockPos.toCenterPos(),player.getEyePos().add(-1,0,0), Beaconated.SPARK);
                     }
 
                     ticks = ticks - 1;

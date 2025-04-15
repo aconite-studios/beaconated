@@ -1,13 +1,12 @@
 package com.thatoneaiguy.beaconated.blocks.entities;
 
+import com.thatoneaiguy.beaconated.Beaconated;
 import com.thatoneaiguy.beaconated.entity.Chnompner;
-import com.thatoneaiguy.beaconated.init.BeaconatedBlockEntities;
-import com.thatoneaiguy.beaconated.init.BeaconatedBlocks;
-import com.thatoneaiguy.beaconated.init.BeaconatedEffects;
-import com.thatoneaiguy.beaconated.init.BeaconatedGlobalMechanics;
+import com.thatoneaiguy.beaconated.init.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.util.math.BlockPos;
